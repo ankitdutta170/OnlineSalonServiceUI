@@ -1,0 +1,71 @@
+<div class='appointment'>
+
+    <h3 style="text-align:center">Take Appointment</h3>
+
+    <form #appointmentForm='ngForm' (submit)='createNew(empForm.value)'>
+        <!--<div class='form-group'>
+            <label for='username'>User Name</label>
+            <input id='username' class='form-control' type='text' ngModel name='username' #userName='ngModel' required>
+        </div>
+        <div *ngIf='userName.touched && userName.invalid' class='alert alert-danger'>
+            Please enter username. This field required
+        </div>-->
+
+        <div class='form-group'>
+            <label for='service'>Service</label>
+            <select id="service" class="form-control" ngModel #visitType='ngModel' required name="service">
+                <option value="Hair">Hair</option>
+                <option value="Facial">Facial</option>
+                <option value="Hair Spa">Hair Spa</option>
+                <option value="Trimming">Trimming</option>
+                <option value="Groom Makeup">Groom Makeup</option>
+                <option value="Bride Makeup">Bride Makeup</option>
+            </select>
+        </div>
+        <div *ngIf='service.touched && service.invalid'>
+            <div *ngIf='service.errors.required' class='alert alert-danger'>
+                Please enter Service
+            </div>
+
+        </div>
+        <div class='form-group'>
+            <label for='date'>Preferred Date</label>
+            <input id='date' class='form-control' type='date' ngModel #date='ngModel' required name='date'>
+        </div>
+        <div *ngIf='date.touched && date.invalid' class='alert alert-danger'>
+            Please enter Date
+        </div>
+        <div class='form-group'>
+            <label for='time'>Preferred Time</label>
+            <input id='time' class='form-control' type='time' ngModel #time='ngModel' required name='time'>
+        </div>
+        <div *ngIf='time.touched && time.invalid' class='alert alert-danger'>
+            Please enter Time
+        </div>
+        <div class='form-group'>
+            <label for='visitType'>Visit Type</label>
+            <select id="visitType" class="form-control" ngModel #visitType='ngModel' required name="visitType">
+                <option value="Home">Home</option>
+                <option value="Salon">Salon</option>
+            </select>
+        </div>
+        <div *ngIf='visitType.touched && visitType.invalid' class='alert alert-danger'>
+            Please enter Visit Type
+        </div>
+        <button type='submit' class='btn btn-primary btn-block' [disabled]='appointmentForm.invalid'>Submit</button>
+    </form>
+
+    <p  class='alert alert-success' *ngIf='successMessage != null' (click)='successMessage=null'>
+        {{successMessage}}
+    </p>
+   
+    <div *ngIf='errorMessage != null' class='alert alert-danger' (click)='errorMessage=null'>
+        {{errorMessage}}
+    </div>
+
+    <div *ngIf='validationMessages != null' (click)='validationMessages=null'>
+        <p *ngFor='let msg of validationMessages' class='alert alert-danger'>
+            {{msg}}
+        </p>
+    </div>
+</div>
