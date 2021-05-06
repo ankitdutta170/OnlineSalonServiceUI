@@ -1,4 +1,5 @@
 import { Time } from "@angular/common";
+import { SalonService } from "./salonService";
 
 export interface Appointment{
     appointment_id:number;
@@ -7,5 +8,5 @@ export interface Appointment{
     preferred_time:Time;
     visit_type:string;
     user_id_fk:number;
-    salon_service_id_fk:number;
+    salonService:SalonService
 }

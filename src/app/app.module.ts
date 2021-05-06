@@ -8,13 +8,17 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { AppointmentListComponent } from './appointment-list/appointment-list.component';
+import { AppointmentUpdateComponent } from './appointment-update/appointment-update.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TakeAppointmentComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    AppointmentListComponent,
+    AppointmentUpdateComponent
   ],
   imports: [
     BrowserModule,
