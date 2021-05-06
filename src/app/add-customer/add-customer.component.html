@@ -1,0 +1,63 @@
+
+<div class='customer'>
+
+    <h3 style="text-align:center">Add Customer</h3>
+
+    <form #customerForm='ngForm' (submit)='createNew(customerForm.value)'>
+        <!--<div class='form-group'>
+            <label for='username'>User Name</label>
+            <input id='username' class='form-control' type='text' ngModel name='username' #userName='ngModel' required>
+        </div>
+        <div *ngIf='userName.touched && userName.invalid' class='alert alert-danger'>
+            Please enter username. This field required
+        </div>-->
+
+        <div class='form-group'>
+            <label for='mobileno'>Mobile Number</label>
+            <input id='mobileno' class='form-control' type='text' ngModel name='mobileno' #mobileno='ngModel' required>
+            
+        </div>
+        <div *ngIf='mobileno.touched && mobileno.invalid'>
+            <div *ngIf='mobileno.errors.required' class='alert alert-danger'>
+                Please enter Correct Mobile number
+            </div>
+
+        </div>
+        <div class='form-group'>
+            <label for='dob'>Date of birth</label>
+            <input id='dob' class='form-control' type='date' ngModel #dob='ngModel' required name='dob'>
+        </div>
+        <div *ngIf='dob.touched && dob.invalid' class='alert alert-danger'>
+            Please enter Date of Birth
+        </div>
+        <div class='form-group'>
+            <label for='email'>Email</label>
+            <input id='email' class='form-control' type='text' ngModel #email='ngModel' required name='email'>
+        </div>
+        <div *ngIf='email.touched && email.invalid' class='alert alert-danger'>
+            Please enter Email
+        </div>
+        <div class='form-group'>
+            <label for='name'>Name</label>
+            <input id='name' class='form-control' type='text' ngModel #name='ngModel' required name='name'>
+        </div>
+        <div *ngIf='name.touched && name.invalid' class='alert alert-danger'>
+            Please enter Visit Type
+        </div>
+        <button type='submit' class='btn btn-primary btn-block' [disabled]='customerForm.invalid'>Submit</button>
+    </form>
+
+    <p  class='alert alert-success' *ngIf='successMessage != null' (click)='successMessage=null'>
+        {{successMessage}}
+    </p>
+   
+    <div *ngIf='errorMessage != null' class='alert alert-danger' (click)='errorMessage=null'>
+        {{errorMessage}}
+    </div>
+
+    <div *ngIf='validationMessages != null' (click)='validationMessages=null'>
+        <p *ngFor='let msg of validationMessages' class='alert alert-danger'>
+            {{msg}}
+        </p>
+    </div>
+</div>
