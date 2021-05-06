@@ -4,7 +4,7 @@ import { AddSalonserviceComponent } from './add-salonservice.component';
 
 describe('AddSalonserviceComponent', () => {
   let component: AddSalonserviceComponent;
-  let fixture: ComponentFixture<AddSalonserviceComponent>;
+  let fiaxture: ComponentFixture<AddSalonserviceComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

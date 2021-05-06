@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import {SalonServiceUpdateComponent} from './salonservice-update.component';
+import { SalonServices } from 'src/model/salonservice';
+import { SalonService } from '../salon.service';
+
 @Component({
   selector: 'app-salonservice-update',
   templateUrl: './salonservice-update.component.html',
   styleUrls: ['./salonservice-update.component.css']
 })
 export class SalonServiceUpdateComponent implements OnInit {
-  appointment: SalonService=null;
+  salonservice: SalonServices=null;
   validationMessages: string[] = null;
   errorMessage: string = null;
   successMessage: string = null;
@@ -19,9 +21,9 @@ export class SalonServiceUpdateComponent implements OnInit {
       (params) => {
         let aid: number = +params.get('serviceId');
 
-        this.service.getEmployee(aid).subscribe(
+        this.service.getSalonService(aid).subscribe(
           (data) => {
-            this.SalonService = data
+            this.salonservice = data
           },
           (fail) => {
             this.errorMessage = fail.error.errorMessage;
@@ -32,7 +34,7 @@ export class SalonServiceUpdateComponent implements OnInit {
   }
   updated() {
     console.log(this.salonservice)
-    this.service.updateSalonservice(this.salonservice).subscribe(
+    this.service.updateSalonService(this.salonservice).subscribe(
       (message) => {
         this.successMessage=message
         this.validationMessages = null

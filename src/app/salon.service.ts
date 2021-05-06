@@ -6,10 +6,26 @@ import { SalonServices } from 'src/model/salonservice';
   providedIn: 'root'
 })
 export class SalonService {
-  baseUrl: string = "http://localhost:8085/appointments"
+  baseUrl: string = "http://localhost:8085/salonservices"
   constructor(private http:HttpClient) { }
 
   addSalonService(salonservice: SalonServices) :Observable<any>{
     return this.http.post(this.baseUrl, salonservice, { responseType: 'text' });
+  }
+  getSalonServices(): Observable<any> {
+    const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
+    return this.http.get(this.baseUrl,{headers});
+  }
+  getSalonService(aid: number): Observable<any> {
+    const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
+    return this.http.get(`${this.baseUrl}/${aid}`, { headers })
+  }
+  deleteSalonService(aid: number): Observable<any> {
+    const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
+    return this.http.delete(`${this.baseUrl}/${aid}`, { headers, responseType: 'text' })
+  }
+  updateSalonService(salonService: SalonServices): Observable<any> {
+    const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
+    return this.http.put(this.baseUrl, salonService, { headers, responseType: 'text' });
   }
 }

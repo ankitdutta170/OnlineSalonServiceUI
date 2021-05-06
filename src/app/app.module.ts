@@ -11,6 +11,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 import { AppointmentUpdateComponent } from './appointment-update/appointment-update.component';
 import { AddSalonserviceComponent } from './add-salonservice/add-salonservice.component';
+import { SalonserviceUpdateComponent } from './salonservice-update/salonservice-update.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AddSalonserviceComponent } from './add-salonservice/add-salonservice.co
     LogoutComponent,
     AppointmentListComponent,
     AppointmentUpdateComponent,
-    AddSalonserviceComponent
+    AddSalonserviceComponent,
+    SalonserviceUpdateComponent
   ],
   imports: [
     BrowserModule,
