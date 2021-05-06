@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Appointment } from 'src/model/appointment';
+import { SalonService } from 'src/model/salonService';
 import { AppointmentService } from '../appointment.service';
 
 @Component({
@@ -34,6 +35,10 @@ export class TakeAppointmentComponent implements OnInit {
       }
 
     )
+
+  }
+  getSalonService(data:SalonService){
+    
 
   }
 

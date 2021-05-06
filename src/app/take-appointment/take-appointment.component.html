@@ -13,7 +13,7 @@
 
         <div class='form-group'>
             <label for='service'>Service</label>
-            <select id="service" class="form-control" ngModel #visitType='ngModel' required name="service">
+            <select id="service" class="form-control" ngModel #service='ngModel' required (change)='getSalonService(service.value)' name="service">
                 <option value="Hair">Hair</option>
                 <option value="Facial">Facial</option>
                 <option value="Hair Spa">Hair Spa</option>
