@@ -7,12 +7,14 @@ import { LogoutComponent } from './logout/logout.component';
 import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 import { AppointmentUpdateComponent } from './appointment-update/appointment-update.component';
 import { AddSalonserviceComponent } from './add-salonservice/add-salonservice.component';
+import { AddCustomerComponent } from './add-customer/add-customer.component';
 
 const routes: Routes = [
   {path:'appointments',component:TakeAppointmentComponent,canActivate:[AuthGuard]},
   {path:'showAppointments',component:AppointmentListComponent,canActivate:[AuthGuard]},
   {path:'update/:aid',component:AppointmentUpdateComponent,canActivate:[AuthGuard]},
   {path:'addSalonService',component:AddSalonserviceComponent,canActivate:[AuthGuard]},
+  {path:'addCustomer',component:AddCustomerComponent},
   {path:'login', component:LoginComponent},
   {path:'logout',component:LogoutComponent}
 ];
