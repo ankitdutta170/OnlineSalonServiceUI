@@ -29,17 +29,17 @@
 
         </div>
         <div class='form-group'>
-            <label for='date'>Preferred Date</label>
-            <input id='date' class='form-control' type='date' ngModel #date='ngModel' required name='date'>
+            <label for='preferredDate'>Preferred Date</label>
+            <input id='preferredDate' class='form-control' type='date' ngModel #preferredDate='ngModel' required name='preferredDate'>
         </div>
-        <div *ngIf='date.touched && date.invalid' class='alert alert-danger'>
+        <div *ngIf='preferredDate.touched && preferredDate.invalid' class='alert alert-danger'>
             Please enter Date
         </div>
         <div class='form-group'>
-            <label for='time'>Preferred Time</label>
-            <input id='time' class='form-control' type='time' ngModel #time='ngModel' required name='time'>
+            <label for='preferredTime'>Preferred Time</label>
+            <input id='preferredTime' class='form-control' type='time' ngModel #preferredTime='ngModel' required name='preferredTime'>
         </div>
-        <div *ngIf='time.touched && time.invalid' class='alert alert-danger'>
+        <div *ngIf='preferredTime.touched && preferredTime.invalid' class='alert alert-danger'>
             Please enter Time
         </div>
         <div class='form-group'>

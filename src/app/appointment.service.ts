@@ -18,7 +18,7 @@ export class AppointmentService {
     const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
     return this.http.get(this.baseUrl,{headers});
   }
-  getEmployee(aid: number): Observable<any> {
+  getAppointment(aid: number): Observable<any> {
     const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
     return this.http.get(`${this.baseUrl}/${aid}`, { headers })
   }

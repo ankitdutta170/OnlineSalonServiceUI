@@ -21,9 +21,10 @@ export class AppointmentUpdateComponent implements OnInit {
       (params) => {
         let aid: number = +params.get('appointmentId');
 
-        this.service.getEmployee(aid).subscribe(
+        this.service.getAppointment(aid).subscribe(
           (data) => {
             this.appointment = data
+            console.log(this.appointment)
           },
           (fail) => {
             this.errorMessage = fail.error.errorMessage;
