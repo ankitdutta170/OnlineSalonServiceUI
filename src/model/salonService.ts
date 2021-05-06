@@ -1,4 +1,4 @@
-export interface SalonService{
+export interface SalonServices{
     service_id:number;
     discount:number;
     duration:string;
