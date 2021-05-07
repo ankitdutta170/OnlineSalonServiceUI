@@ -1,0 +1,59 @@
+<div class='salonservice'>
+    <h3 style="text-align:center">Add Salon Service</h3>
+
+  <form #salonServiceForm='ngForm' (submit)='createNew(salonServiceForm.value)'>
+      <!--<div class='form-group'>
+          <label for='username'>User Name</label>
+          <input id='username' class='form-control' type='text' ngModel name='username' #userName='ngModel' required>
+      </div>
+      <div *ngIf='userName.touched && userName.invalid' class='alert alert-danger'>
+          Please enter username. This field required
+      </div>-->
+
+      <div class='form-group'>
+          <label for='serviceName'>Services</label>
+          <input id='serviceName' class='form-control' type='text' ngModel #serviceName='ngModel' required name='serviceName'>
+      </div>
+      <div *ngIf='serviceName.touched && serviceName.invalid'>
+          <div *ngIf='serviceName.errors.required' class='alert alert-danger'>
+              Please enter Service Name
+          </div>
+      </div>
+      <div class='form-group'>
+          <label for='discount'>Discount</label>
+          <input id='discount' class='form-control' type='text' ngModel #discount='ngModel' required name='discount'>
+      </div>
+      <div *ngIf='discount.touched && discount.invalid' class='alert alert-danger'>
+          Please enter Discount
+      </div>
+      <div class='form-group'>
+        <label for='duration'>Duration</label>
+        <input id='duration' class='form-control' type='text' ngModel #duration='ngModel' required name='duration'>
+    </div>
+    <div *ngIf='duration.touched && duration.invalid' class='alert alert-danger'>
+        Please enter Duration
+    </div>
+    <div class='form-group'>
+      <label for='price'>Price</label>
+      <input id='price' class='form-control' type='text' ngModel #price='ngModel' required name='price'>
+  </div>
+  <div *ngIf='price.touched && price.invalid' class='alert alert-danger'>
+      Please enter Price
+  </div>
+      <button type='submit' class='btn btn-primary btn-block' [disabled]='salonServiceForm.invalid'>Submit</button>
+  </form>
+
+  <p  class='alert alert-success' *ngIf='successMessage != null' (click)='successMessage=null'>
+      {{successMessage}}
+  </p>
+
+  <div *ngIf='errorMessage != null' class='alert alert-danger' (click)='errorMessage=null'>
+      {{errorMessage}}
+  </div>
+
+  <div *ngIf='validationMessages != null' (click)='validationMessages=null'>
+      <p *ngFor='let msg of validationMessages' class='alert alert-danger'>
+          {{msg}}
+      </p>
+  </div>
+</div>

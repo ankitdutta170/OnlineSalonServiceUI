@@ -7,7 +7,7 @@
             </tr>
             <tr>
                 <td>Service</td>
-                <td><select id="service" class="form-control" [(ngModel)]='appointment.service' >
+                <td><select id="service" class="form-control" [(ngModel)]='appointment.salonService' >
                     <option value="Hair">Hair</option>
                     <option value="Facial">Facial</option>
                     <option value="Hair Spa">Hair Spa</option>
@@ -31,7 +31,7 @@
                     <option value="Salon">Salon</option>
                 </select></td>
             </tr>
-            
+
         </table>
         <button (click)='updated()' class='btn btn-success btn-block'>Update</button>
         <button (click)='goBack()' class='btn btn-primary btn-block'>Back</button>

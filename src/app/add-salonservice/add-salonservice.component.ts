@@ -1,28 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { Appointment } from 'src/model/appointment';
 import { SalonServices } from 'src/model/salonservice';
-import { AppointmentService } from '../appointment.service';
+import { SalonService } from '../salon.service';
+
 
 @Component({
-  selector: 'app-take-appointment',
-  templateUrl: './take-appointment.component.html',
-  styleUrls: ['./take-appointment.component.css']
+  selector: 'app-add-salonservice',
+  templateUrl: './add-salonservice.component.html',
+  styleUrls: ['./add-salonservice.component.css']
 })
-export class TakeAppointmentComponent implements OnInit {
-
+export class AddSalonserviceComponent implements OnInit {
   validationMessages: string[] = null;
   errorMessage: string = null;
   successMessage: string = null;
-
-
-  constructor(private service:AppointmentService) { }
+  constructor(private service:SalonService) { }
 
   ngOnInit() {
-  }
 
-  createNew(data: Appointment) {
+
+  }
+  createNew(data: SalonServices) {
     console.log(data);
-    this.service.addAppointment(data).subscribe(
+    this.service.addSalonService(data).subscribe(
       (message) => {
         this.successMessage = message;
         this.validationMessages = null;
@@ -35,10 +33,6 @@ export class TakeAppointmentComponent implements OnInit {
       }
 
     )
-
-  }
-  getSalonService(data:SalonServices){
-
 
   }
 
