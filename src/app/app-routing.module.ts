@@ -13,10 +13,10 @@ import { CustomerUpdateComponent } from './customer-update/customer-update.compo
 const routes: Routes = [
   {path:'appointments',component:TakeAppointmentComponent,canActivate:[AuthGuard]},
   {path:'showAppointments',component:AppointmentListComponent,canActivate:[AuthGuard]},
-  {path:'update/:aid',component:AppointmentUpdateComponent,canActivate:[AuthGuard]},
+  {path:'update/:appointmentId',component:AppointmentUpdateComponent,canActivate:[AuthGuard]},
   {path:'addCustomer',component:AddCustomerComponent},
   {path:'showCustomers',component:CustomerListComponent,canActivate:[AuthGuard]},
-  {path:'update/:cid',component:CustomerUpdateComponent,canActivate:[AuthGuard]},
+  {path:'update/:userId',component:CustomerUpdateComponent,canActivate:[AuthGuard]},
   {path:'login', component:LoginComponent},
   {path:'logout',component:LogoutComponent}
 ];

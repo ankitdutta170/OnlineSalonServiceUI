@@ -20,7 +20,7 @@ export class AppointmentUpdateComponent implements OnInit {
     this.route.paramMap.subscribe(
       (params) => {
         let aid: number = +params.get('appointmentId');
-
+        console.log(aid);
         this.service.getAppointment(aid).subscribe(
           (data) => {
             this.appointment = data
