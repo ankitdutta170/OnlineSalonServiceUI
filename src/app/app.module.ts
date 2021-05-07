@@ -13,7 +13,12 @@ import { AppointmentUpdateComponent } from './appointment-update/appointment-upd
 import { AddSalonserviceComponent } from './add-salonservice/add-salonservice.component';
 import { SalonServiceUpdateComponent } from './salonservice-update/salonservice-update.component';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
+<<<<<<< HEAD
 import { SalonserviceListComponent } from './salonservice-list/salonservice-list.component';
+=======
+import { CustomerListComponent } from './customer-list/customer-list.component';
+import { CustomerUpdateComponent } from './customer-update/customer-update.component';
+>>>>>>> 92807f2c34ef69efc6d184c21e72b14343186a45
 
 @NgModule({
   declarations: [
@@ -23,10 +28,16 @@ import { SalonserviceListComponent } from './salonservice-list/salonservice-list
     LogoutComponent,
     AppointmentListComponent,
     AppointmentUpdateComponent,
+<<<<<<< HEAD
     AddSalonserviceComponent,
     SalonServiceUpdateComponent,
     AddCustomerComponent,
     SalonserviceListComponent
+=======
+    AddCustomerComponent,
+    CustomerListComponent,
+    CustomerUpdateComponent
+>>>>>>> 92807f2c34ef69efc6d184c21e72b14343186a45
   ],
   imports: [
     BrowserModule,
