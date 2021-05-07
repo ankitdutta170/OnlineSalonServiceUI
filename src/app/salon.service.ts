@@ -6,7 +6,7 @@ import { SalonServices } from 'src/model/salonservice';
   providedIn: 'root'
 })
 export class SalonService {
-  baseUrl: string = "http://localhost:8085/salonservices"
+  baseUrl: string="http://localhost:8085/salonservices"
   constructor(private http:HttpClient) { }
 
   addSalonService(salonservice: SalonServices) :Observable<any>{
@@ -29,3 +29,4 @@ export class SalonService {
     return this.http.put(this.baseUrl, salonService, { headers, responseType: 'text' });
   }
 }
+
