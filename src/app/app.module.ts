@@ -11,6 +11,12 @@ import { LogoutComponent } from './logout/logout.component';
 import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 import { AppointmentUpdateComponent } from './appointment-update/appointment-update.component';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
+import { AddBillComponent } from './add-bill/add-bill.component';
+import { AddAddressComponent } from './add-address/add-address.component';
+import { BillingListComponent } from './billing-list/billing-list.component';
+import { AddressListComponent } from './address-list/address-list.component';
+import { AddressUpdateComponent } from './address-update/address-update.component';
+import { BillingUpdateComponent } from './billing-update/billing-update.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +26,13 @@ import { AddCustomerComponent } from './add-customer/add-customer.component';
     LogoutComponent,
     AppointmentListComponent,
     AppointmentUpdateComponent,
-    AddCustomerComponent
+    AddCustomerComponent,
+    AddBillComponent,
+    AddAddressComponent,
+    BillingListComponent,
+    AddressListComponent,
+    AddressUpdateComponent,
+    BillingUpdateComponent
   ],
   imports: [
     BrowserModule,

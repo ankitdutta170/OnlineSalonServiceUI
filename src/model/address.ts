@@ -1,7 +1,7 @@
 import { Time } from "@angular/common";
 import { SalonService } from "./salonService";
 
-export interface Appointment{
+export interface Address{
     address_id:number;
     doorNo:string;
     street:string;

@@ -1,0 +1,37 @@
+<div class='billing'>
+    <h3 style="text-align:center">Add Bill</h3>
+
+  <form #billingServiceForm='ngForm' (submit)='createNew(billingServiceForm.value)'>
+      <div class='form-group'>
+          <label for='amount'>Amount</label>
+          <input id='amount' class='form-control' type='number' ngModel #amount='ngModel' required name='amount'>
+      </div>
+      <div *ngIf='amount.touched && amount.invalid'>
+          <div *ngIf='amount.errors.required' class='alert alert-danger'>
+              Please enter Amount
+          </div>
+      </div>
+      <div>
+        <label for='billingDate'>Billing Date</label>
+        <input id='billingDate' class='form-control' type='date' ngModel #billingDate='ngModel' required name='billingDate'>
+    </div>
+    <div *ngIf='billingDate.touched && billingDate.invalid' class='alert alert-danger'>
+        Please enter Billing Date
+    </div>
+    
+      <button type='submit' class='btn btn-primary btn-block' [disabled]='billingServiceForm.invalid'>Submit</button>
+  </form>
+  <p  class='alert alert-success' *ngIf='successMessage != null' (click)='successMessage=null'>
+      {{successMessage}}
+  </p>
+
+  <div *ngIf='errorMessage != null' class='alert alert-danger' (click)='errorMessage=null'>
+      {{errorMessage}}
+  </div>
+
+  <div *ngIf='validationMessages != null' (click)='validationMessages=null'>
+      <p *ngFor='let msg of validationMessages' class='alert alert-danger'>
+          {{msg}}
+      </p>
+  </div>
+</div>

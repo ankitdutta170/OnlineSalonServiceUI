@@ -1,0 +1,78 @@
+
+<div class='address'>
+
+    <h3 style="text-align:center">Add Address</h3>
+
+    <form #customerForm='ngForm' (submit)='createNew(addressForm.value)'>
+        <!--<div class='form-group'>
+            <label for='username'>User Name</label>
+            <input id='username' class='form-control' type='text' ngModel name='username' #userName='ngModel' required>
+        </div>
+        <div *ngIf='userName.touched && userName.invalid' class='alert alert-danger'>
+            Please enter username. This field required
+        </div>-->
+
+        <div class='form-group'>
+            <label for='doorNo'>Door No</label>
+            <input id='doorNo' class='form-control' type='text' ngModel name='doorNo' #doorNo='ngModel' required>
+            
+        </div>
+        <div *ngIf='doorNo.touched && doorNo.invalid'>
+            <div *ngIf='doorNo.errors.required' class='alert alert-danger'>
+                Please enter doorNo
+            </div>
+
+        </div>
+        <div class='form-group'>
+            <label for='street'>Street</label>
+            <input id='street' class='form-control' type='text' ngModel #street='ngModel' required name='street'>
+        </div>
+        <div *ngIf='street.touched && street.invalid' class='alert alert-danger'>
+            Please enter Street
+        </div>
+        <div class='form-group'>
+            <label for='area'>Area</label>
+            <input id='area' class='form-control' type='text' ngModel #area='ngModel' required name='area'>
+        </div>
+        <div *ngIf='area.touched && area.invalid' class='alert alert-danger'>
+            Please enter Area
+        </div>
+        <div class='form-group'>
+            <label for='city'>City</label>
+            <input id='city' class='form-control' type='text' ngModel #city='ngModel' required name='city'>
+        </div>
+        <div *ngIf='city.touched && city.invalid' class='alert alert-danger'>
+            Please enter City
+        </div>
+        <div class='form-group'>
+            <label for='state'>State</label>
+            <input id='state' class='form-control' type='text' ngModel #state='ngModel' required name='state'>
+        </div>
+        <div *ngIf='state.touched && state.invalid' class='alert alert-danger'>
+            Please enter State
+        </div>
+        <div class='form-group'>
+            <label for='pincode'>Pin Number</label>
+            <input id='pincode' class='form-control' type='number' ngModel #pincode='ngModel' required name='pincode'>
+        </div>
+        <div *ngIf='pincode.touched && pincode.invalid' class='alert alert-danger'>
+            Please enter Pin Number
+        </div>
+
+        <button type='submit' class='btn btn-primary btn-block' [disabled]='addressForm.invalid'>Submit</button>
+    </form>
+
+    <p  class='alert alert-success' *ngIf='successMessage != null' (click)='successMessage=null'>
+        {{successMessage}}
+    </p>
+   
+    <div *ngIf='errorMessage != null' class='alert alert-danger' (click)='errorMessage=null'>
+        {{errorMessage}}
+    </div>
+
+    <div *ngIf='validationMessages != null' (click)='validationMessages=null'>
+        <p *ngFor='let msg of validationMessages' class='alert alert-danger'>
+            {{msg}}
+        </p>
+    </div>
+</div>

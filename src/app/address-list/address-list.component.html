@@ -1,0 +1,36 @@
+<p>address-list works!</p>
+<div class='maindiv' *ngIf='errorMessage == null'>
+    <h3 style='text-align:center;'>{{header}}</h3>
+    <table class='table'>
+        <tr>
+            <th>Door No</th>
+            <th>Street</th>
+            <th>Area</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Pin Number</th>
+            <th>Operation</th>
+        </tr>
+        <tr *ngFor='let address of addresses' style='padding:2px'>
+            <td>{{address.doorNo}}</td>
+            <td>{{address.street}}</td>
+            <td>{{address.area}}</td>
+            <td>{{address.city}}</td>
+            <td>{{address.state}}</td>
+            <td>{{address.pincode}}</td>
+            
+            <!--<td>{{address.salonService.serviceName}}</td>-->
+            <td>
+                <button class='btn btn-danger' (click)='delete(address.addressId)'>Delete</button>
+                <a [routerLink]="['/update',address.addressId]" class='btn btn-primary'>Modify</a>
+            </td>
+        </tr>
+    </table>
+
+    <div *ngIf='message != null' (click)='message=null' class='alert alert-success'>
+        {{message}}
+    </div>
+</div>
+<div class='alert alert-danger' *ngIf='errorMessage != null'>
+    <h2>{{errorMessage}}</h2>
+</div>
