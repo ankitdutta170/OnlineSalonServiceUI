@@ -6,7 +6,8 @@ export interface Appointment{
     location:string;
     preferredDate:Date;
     preferredTime:Time;
+    preferredService:SalonService
     visitType:string;
     user_id_fk:number;
-    salonService:SalonService
+    
 }
