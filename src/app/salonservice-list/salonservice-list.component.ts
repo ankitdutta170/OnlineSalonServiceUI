@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { SalonServices } from 'src/model/salonservice';
+import { SalonService } from '../salon.service';
 @Component({
   selector: 'app-salonservice-list',
   templateUrl: './salonservice-list.component.html',
   styleUrls: ['./salonservice-list.component.css']
 })
 export class SalonserviceListComponent implements OnInit {
-  appointments: SalonServices[];
+  salonservices: SalonServices[];
   message: string = null;
   errorMessage: string = null;
   header: string = "List of SalonServices";
-  constructor(private service:SalonServices) { }
+  constructor(private service:SalonService) { }
 
   ngOnInit() {
     this.loadData();
@@ -31,8 +32,8 @@ export class SalonserviceListComponent implements OnInit {
     this.service.getSalonServices().subscribe(
       (data) => {
 
-        this.salonservice = data;
-        console.log(this.salonservice);
+        this.salonservices = data;
+        console.log(this.salonservices);
         this.errorMessage = null;
       },
       (failResponse) => {

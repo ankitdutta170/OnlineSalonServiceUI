@@ -1,7 +1,7 @@
 import { Time } from "@angular/common";
-import { SalonServices } from "./salonservice";
 
-export interface Appointment{
+
+export interface Billing{
     Bill_id:number;
     amount:number;
     billingDate:Date;
