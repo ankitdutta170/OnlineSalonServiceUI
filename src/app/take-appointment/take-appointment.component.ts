@@ -37,7 +37,8 @@ export class TakeAppointmentComponent implements OnInit {
     )
 
   }
-  getSalonService(data:SalonServices){
+  getSalonService(service:string){
+    
 
 
   }

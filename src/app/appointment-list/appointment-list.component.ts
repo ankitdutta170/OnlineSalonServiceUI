@@ -34,7 +34,6 @@ export class AppointmentListComponent implements OnInit {
       (data) => {
         
         this.appointments = data;
-        console.log(this.appointments);
         this.errorMessage = null;
       },
       (failResponse) => {

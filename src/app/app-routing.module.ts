@@ -21,7 +21,7 @@ const routes: Routes = [
 
   {path:'addCustomer',component:AddCustomerComponent},
   {path:'showCustomers',component:CustomerListComponent,canActivate:[AuthGuard]},
-  {path:'update/:userId',component:CustomerUpdateComponent,canActivate:[AuthGuard]},
+  {path:'updateCustomer/:userId',component:CustomerUpdateComponent,canActivate:[AuthGuard]},
   {path:'login', component:LoginComponent},
   {path:'logout',component:LogoutComponent}
 ];
