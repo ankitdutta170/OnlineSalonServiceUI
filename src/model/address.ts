@@ -1,6 +1,9 @@
 import { Time } from "@angular/common";
-import { SalonService } from "./salonService";
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 84cc09ff9ac484170ac33ec7b9c14e4b263ae22c
 export interface Address{
     address_id:number;
     doorNo:string;
@@ -10,5 +13,4 @@ export interface Address{
     state:string;
     pincode:number;
     user_id_fk:number;
-    
 }

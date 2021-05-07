@@ -1,30 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Appointment } from 'src/model/appointment';
-import { AppointmentService } from '../appointment.service';
+import { SalonServices } from 'src/model/salonservice';
+import { SalonService } from '../salon.service';
 
 @Component({
-  selector: 'app-appointment-update',
-  templateUrl: './appointment-update.component.html',
-  styleUrls: ['./appointment-update.component.css']
+  selector: 'app-salonservice-update',
+  templateUrl: './salonservice-update.component.html',
+  styleUrls: ['./salonservice-update.component.css']
 })
-export class AppointmentUpdateComponent implements OnInit {
-  appointment: Appointment=null;
+export class SalonServiceUpdateComponent implements OnInit {
+  salonservice: SalonServices=null;
   validationMessages: string[] = null;
   errorMessage: string = null;
   successMessage: string = null;
-  constructor(private service:AppointmentService,private route: ActivatedRoute, 
+  constructor(private service:SalonService,private route: ActivatedRoute,
     private router: Router) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(
       (params) => {
-        let aid: number = +params.get('appointmentId');
-        console.log(aid);
-        this.service.getAppointment(aid).subscribe(
+        let aid: number = +params.get('serviceId');
+
+        this.service.getSalonService(aid).subscribe(
           (data) => {
-            this.appointment = data
-            console.log(this.appointment)
+            this.salonservice = data
           },
           (fail) => {
             this.errorMessage = fail.error.errorMessage;
@@ -34,8 +33,8 @@ export class AppointmentUpdateComponent implements OnInit {
     )
   }
   updated() {
-    console.log(this.appointment)
-    this.service.updateAppointment(this.appointment).subscribe(
+    console.log(this.salonservice)
+    this.service.updateSalonService(this.salonservice).subscribe(
       (message) => {
         this.successMessage=message
         this.validationMessages = null
@@ -52,7 +51,7 @@ export class AppointmentUpdateComponent implements OnInit {
   }
 
   goBack(){
-    this.router.navigate(["showAppointments"]);
+    this.router.navigate(["showServices"]);
   }
 
 

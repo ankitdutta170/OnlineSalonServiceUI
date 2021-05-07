@@ -12,5 +12,21 @@ export class CustomerService {
   addCustomer(customer: Customer) :Observable<any>{
     return this.http.post(this.baseUrl, customer, { responseType: 'text' });
   }
+  getCustomers(): Observable<any> {
+    const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
+    return this.http.get(this.baseUrl,{headers});
+  }
+  getCustomer(cid: number): Observable<any> {
+    const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
+    return this.http.get(`${this.baseUrl}/${cid}`, { headers })
+  }
+  deleteCustomer(cid: number): Observable<any> {
+    const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
+    return this.http.delete(`${this.baseUrl}/${cid}`, { headers, responseType: 'text' })
+  }
+  updateCustomer(customer: Customer): Observable<any> {
+    const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
+    return this.http.put(this.baseUrl, customer, { headers, responseType: 'text' });
+  }
 
 }
