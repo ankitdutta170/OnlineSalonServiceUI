@@ -13,6 +13,7 @@ import { AppointmentUpdateComponent } from './appointment-update/appointment-upd
 import { AddSalonserviceComponent } from './add-salonservice/add-salonservice.component';
 import { SalonServiceUpdateComponent } from './salonservice-update/salonservice-update.component';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
+import { SalonserviceListComponent } from './salonservice-list/salonservice-list.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AddCustomerComponent } from './add-customer/add-customer.component';
     AppointmentUpdateComponent,
     AddSalonserviceComponent,
     SalonServiceUpdateComponent,
-    AddCustomerComponent
+    AddCustomerComponent,
+    SalonserviceListComponent
   ],
   imports: [
     BrowserModule,
