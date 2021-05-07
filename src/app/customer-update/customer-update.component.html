@@ -1,0 +1,39 @@
+<div class='customer'>
+    <div *ngIf='employee != null'>
+        <table class='table'>
+            <tr>
+                <td>Customer Id</td>
+                <td><input type='text' [(ngModel)]='customer.customerId' readonly></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input type='text' [(ngModel)]='customer.name'></td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td><input type='text' [(ngModel)]='customer.email'></td>
+            </tr>
+            <tr>
+                <td>dob</td>
+                <td><input type='date' [(ngModel)]='customer.dob'></td>
+            </tr>
+        </table>
+        <button (click)='updated()' class='btn btn-success btn-block'>Update</button>
+        <button (click)='goBack()' class='btn btn-primary btn-block'>Back</button>
+
+        <p class='alert alert-success' *ngIf='successMessage != null' (click)='successMessage=null'>
+            {{successMessage}}
+        </p>
+
+    </div>
+
+    <div *ngIf='errorMessage != null' class='alert alert-danger' (click)='errorMessage=null'>
+        {{errorMessage}}
+    </div>
+
+    <div *ngIf='validationMessages != null' (click)='validationMessages=null'>
+        <p *ngFor='let msg of validationMessages' class='alert alert-danger'>
+            {{msg}}
+        </p>
+    </div>
+</div>

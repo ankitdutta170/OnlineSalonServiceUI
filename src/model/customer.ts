@@ -1,5 +1,5 @@
 export interface Customer{
-    mobile:string;
+    contactNo:string;
     name:string;
     email:string;
     dob:Date;
