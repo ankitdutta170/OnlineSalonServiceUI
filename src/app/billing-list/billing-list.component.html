@@ -12,8 +12,8 @@
             
             
             <td>
-                <button class='btn btn-danger' (click)='delete(bill.billingId)'>Delete</button>
-                <a [routerLink]="['/update',bill.billingId]" class='btn btn-primary'>Modify</a>
+                <button class='btn btn-danger' (click)='delete(bill.billId)'>Delete</button>
+                <a [routerLink]="['/updateBill',bill.billId]" class='btn btn-primary'>Modify</a>
             </td>
         </tr>
     </table>

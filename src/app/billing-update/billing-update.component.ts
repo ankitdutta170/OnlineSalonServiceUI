@@ -19,7 +19,7 @@ export class BillingUpdateComponent implements OnInit {
     ngOnInit() {
       this.route.paramMap.subscribe(
         (params) => {
-          let aid: number = +params.get('appointmentId');
+          let aid: number = +params.get('billId');
   
           this.service.getBill(aid).subscribe(
             (data) => {

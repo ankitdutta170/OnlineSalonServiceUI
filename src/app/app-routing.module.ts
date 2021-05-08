@@ -36,8 +36,8 @@ const routes: Routes = [
   {path:'addBilling',component:AddBillComponent},
   {path:'addAddress',component:AddAddressComponent},
   {path:'showAddresses',component:AddressListComponent},
-  {path:'updateAddress',component:AddressUpdateComponent},
-  {path:'updateBill',component:BillingUpdateComponent},
+  {path:'updateAddress/:addressId',component:AddressUpdateComponent},
+  {path:'updateBill/:billId',component:BillingUpdateComponent},
   {path:'showBills',component:BillingListComponent}
 ];
 
