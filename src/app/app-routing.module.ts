@@ -18,17 +18,19 @@ import { AddressUpdateComponent } from './address-update/address-update.componen
 import { BillingUpdateComponent } from './billing-update/billing-update.component';
 
 
+import { SalonServiceUpdateComponent } from './salonservice-update/salonservice-update.component';
+import { SalonserviceListComponent } from './salonservice-list/salonservice-list.component';
 const routes: Routes = [
   {path:'appointments',component:TakeAppointmentComponent,canActivate:[AuthGuard]},
   {path:'showAppointments',component:AppointmentListComponent,canActivate:[AuthGuard]},
-  
+
   {path:'addSalonService',component:AddSalonserviceComponent,canActivate:[AuthGuard]},
-
+  {path:'updateSalonService/:serviceId',component:SalonServiceUpdateComponent,canActivate:[AuthGuard]},
+  {path:'showServices',component:SalonserviceListComponent},
   {path:'update/:appointmentId',component:AppointmentUpdateComponent,canActivate:[AuthGuard]},
-
   {path:'addCustomer',component:AddCustomerComponent},
   {path:'showCustomers',component:CustomerListComponent,canActivate:[AuthGuard]},
-  {path:'update/:userId',component:CustomerUpdateComponent,canActivate:[AuthGuard]},
+  {path:'updateCustomer/:userId',component:CustomerUpdateComponent,canActivate:[AuthGuard]},
   {path:'login', component:LoginComponent},
   {path:'logout',component:LogoutComponent},
   {path:'addBilling',component:AddBillComponent},

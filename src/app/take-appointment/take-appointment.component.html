@@ -12,18 +12,15 @@
         </div>-->
 
         <div class='form-group'>
-            <label for='service'>Service</label>
-            <select id="service" class="form-control" ngModel #service='ngModel' required (change)='getSalonService(service.value)' name="service">
-                <option value="Hair">Hair</option>
-                <option value="Facial">Facial</option>
-                <option value="Hair Spa">Hair Spa</option>
-                <option value="Trimming">Trimming</option>
-                <option value="Groom Makeup">Groom Makeup</option>
-                <option value="Bride Makeup">Bride Makeup</option>
-            </select>
+            <label for='preferredService'>Service</label>
+            <select id="preferredService" class="form-control" name="preferredService" ngModel #preferredService='ngModel' required>
+                <option [ngValue]="salonservice" *ngFor="let salonservice of salonservices">
+                  {{salonservice.serviceName}}
+                </option>
+              </select>
         </div>
-        <div *ngIf='service.touched && service.invalid'>
-            <div *ngIf='service.errors.required' class='alert alert-danger'>
+        <div *ngIf='preferredService.touched && preferredService.invalid'>
+            <div *ngIf='preferredService.errors.required' class='alert alert-danger'>
                 Please enter Service
             </div>
 

@@ -2,21 +2,19 @@
   <h3 style='text-align:center;'>{{header}}</h3>
   <table class='table'>
       <tr>
-          <th>Location</th>
-          <th>Preferred Date</th>
-          <th>Preferred Time</th>
-          <th>Visit Type</th>
-          <th>Operation</th>
+          <th>ServiceName</th>
+          <th>discount</th>
+          <th>duration</th>
+          <th>price</th>
       </tr>
       <tr *ngFor='let salonservice of salonservices' style='padding:2px'>
-          <td>{{appointment.location}}</td>
-          <td>{{appointment.preferredDate}}</td>
-          <td>{{appointment.preferredTime}}</td>
-          <td>{{appointment.visitType}}</td>
-          <!--<td>{{appointment.salonService.serviceName}}</td>-->
+          <td>{{salonservice.serviceName}}</td>
+          <td>{{salonservice.discount}}</td>
+          <td>{{salonservice.duration}}</td>
+          <td>{{salonservice.price}}</td>
           <td>
-              <button class='btn btn-danger' (click)='delete(appointment.appointmentId)'>Delete</button>
-              <a [routerLink]="['/update',appointment.appointmentId]" class='btn btn-primary'>Modify</a>
+              <button class='btn btn-danger' (click)='delete(salonservice.serviceId)'>Delete</button>
+              <a [routerLink]="['/updateSalonService',salonservice.serviceId]" class='btn btn-primary'>Modify</a>
           </td>
       </tr>
   </table>

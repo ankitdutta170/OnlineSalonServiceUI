@@ -6,7 +6,7 @@ import { SalonServices } from 'src/model/salonservice';
   providedIn: 'root'
 })
 export class SalonService {
-  baseUrl: string = "http://localhost:8085/salonservices"
+  baseUrl: string="http://localhost:8085/salonservices"
   constructor(private http:HttpClient) { }
 
   addSalonService(salonservice: SalonServices) :Observable<any>{
@@ -20,6 +20,10 @@ export class SalonService {
     const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
     return this.http.get(`${this.baseUrl}/${aid}`, { headers })
   }
+  getSalonServiceByName(name: string): Observable<any> {
+    const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
+    return this.http.get(`${this.baseUrl}/name/${name}`, { headers })
+  }
   deleteSalonService(aid: number): Observable<any> {
     const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
     return this.http.delete(`${this.baseUrl}/${aid}`, { headers, responseType: 'text' })
@@ -29,3 +33,4 @@ export class SalonService {
     return this.http.put(this.baseUrl, salonService, { headers, responseType: 'text' });
   }
 }
+

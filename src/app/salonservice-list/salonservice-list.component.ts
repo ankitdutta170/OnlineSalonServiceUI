@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SalonServices } from 'src/model/salonservice';
 import { SalonService } from '../salon.service';
+
 @Component({
   selector: 'app-salonservice-list',
   templateUrl: './salonservice-list.component.html',
@@ -16,8 +17,8 @@ export class SalonserviceListComponent implements OnInit {
   ngOnInit() {
     this.loadData();
   }
-  delete(service_id: number): void {
-    this.service.deleteSalonService(service_id).subscribe(
+  delete(serviceId: number): void {
+    this.service.deleteSalonService(serviceId).subscribe(
       (response) => {
         this.message = response;
         this.loadData();

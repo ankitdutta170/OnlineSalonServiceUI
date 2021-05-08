@@ -49,7 +49,6 @@ export class SalonServiceUpdateComponent implements OnInit {
     )
 
   }
-
   goBack(){
     this.router.navigate(["showServices"]);
   }
