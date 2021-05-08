@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Appointment } from 'src/model/appointment';
 import { SalonServices } from 'src/model/salonservice';
 import { AppointmentService } from '../appointment.service';
+import { SalonService } from '../salon.service';
 
 @Component({
   selector: 'app-take-appointment',
@@ -9,15 +10,16 @@ import { AppointmentService } from '../appointment.service';
   styleUrls: ['./take-appointment.component.css']
 })
 export class TakeAppointmentComponent implements OnInit {
-
+  salonservices:SalonServices[];
   validationMessages: string[] = null;
   errorMessage: string = null;
   successMessage: string = null;
 
 
-  constructor(private service:AppointmentService) { }
+  constructor(private service:AppointmentService,private salonService:SalonService) { }
 
   ngOnInit() {
+    this.getSalonService();
   }
 
   createNew(data: Appointment) {
@@ -37,8 +39,18 @@ export class TakeAppointmentComponent implements OnInit {
     )
 
   }
-  getSalonService(service:string){
-    
+  getSalonService(){
+    this.salonService.getSalonServices().subscribe(
+      (data) => {
+        
+        this.salonservices = data;
+        console.log(this.salonservices);
+        this.errorMessage = null;
+      },
+      (failResponse) => {
+        this.errorMessage = failResponse.error.errorMessage;
+      }
+    )
 
 
   }

@@ -20,6 +20,10 @@ export class SalonService {
     const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
     return this.http.get(`${this.baseUrl}/${aid}`, { headers })
   }
+  getSalonServiceByName(name: string): Observable<any> {
+    const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
+    return this.http.get(`${this.baseUrl}/name/${name}`, { headers })
+  }
   deleteSalonService(aid: number): Observable<any> {
     const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
     return this.http.delete(`${this.baseUrl}/${aid}`, { headers, responseType: 'text' })
