@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Billing } from 'src/model/billing';
 import { BillService } from '../bill.service';
+
 @Component({
   selector: 'app-billing-list',
   templateUrl: './billing-list.component.html',
@@ -16,7 +17,6 @@ export class BillingListComponent implements OnInit {
   ngOnInit() {
     this.loadData();
   }
-
   delete(billingId: number): void {
     this.service.deleteBill(billingId).subscribe(
       (response) => {

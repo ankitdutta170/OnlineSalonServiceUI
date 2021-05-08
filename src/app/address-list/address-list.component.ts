@@ -8,7 +8,6 @@ import { AddressService } from '../address.service';
   styleUrls: ['./address-list.component.css']
 })
 export class AddressListComponent implements OnInit {
-
   addresses: Address[];
   message: string = null;
   errorMessage: string = null;
@@ -16,10 +15,11 @@ export class AddressListComponent implements OnInit {
   constructor(private service:AddressService) { }
 
   ngOnInit() {
+    this.loadData();
   }
 
-  delete(address_id: number): void {
-    this.service.deleteAddress(address_id).subscribe(
+  delete(addressId: number): void {
+    this.service.deleteAddress(addressId).subscribe(
       (response) => {
         this.message = response;
         this.loadData();

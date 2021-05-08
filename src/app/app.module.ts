@@ -13,18 +13,17 @@ import { AppointmentUpdateComponent } from './appointment-update/appointment-upd
 import { AddSalonserviceComponent } from './add-salonservice/add-salonservice.component';
 import { SalonServiceUpdateComponent } from './salonservice-update/salonservice-update.component';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
-<<<<<<< HEAD
+
 import { AddBillComponent } from './add-bill/add-bill.component';
 import { AddAddressComponent } from './add-address/add-address.component';
 import { BillingListComponent } from './billing-list/billing-list.component';
 import { AddressListComponent } from './address-list/address-list.component';
 import { AddressUpdateComponent } from './address-update/address-update.component';
 import { BillingUpdateComponent } from './billing-update/billing-update.component';
-=======
+
 import { SalonserviceListComponent } from './salonservice-list/salonservice-list.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { CustomerUpdateComponent } from './customer-update/customer-update.component';
->>>>>>> 84cc09ff9ac484170ac33ec7b9c14e4b263ae22c
 
 @NgModule({
   declarations: [
@@ -34,15 +33,13 @@ import { CustomerUpdateComponent } from './customer-update/customer-update.compo
     LogoutComponent,
     AppointmentListComponent,
     AppointmentUpdateComponent,
-<<<<<<< HEAD
     AddCustomerComponent,
     AddBillComponent,
     AddAddressComponent,
     BillingListComponent,
     AddressListComponent,
     AddressUpdateComponent,
-    BillingUpdateComponent
-=======
+    BillingUpdateComponent,
 
     AddSalonserviceComponent,
     SalonServiceUpdateComponent,
@@ -52,7 +49,7 @@ import { CustomerUpdateComponent } from './customer-update/customer-update.compo
     CustomerListComponent,
     CustomerUpdateComponent
 
->>>>>>> 84cc09ff9ac484170ac33ec7b9c14e4b263ae22c
+
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,3 @@
-<p>address-list works!</p>
 <div class='maindiv' *ngIf='errorMessage == null'>
     <h3 style='text-align:center;'>{{header}}</h3>
     <table class='table'>
@@ -18,8 +17,6 @@
             <td>{{address.city}}</td>
             <td>{{address.state}}</td>
             <td>{{address.pincode}}</td>
-            
-            <!--<td>{{address.salonService.serviceName}}</td>-->
             <td>
                 <button class='btn btn-danger' (click)='delete(address.addressId)'>Delete</button>
                 <a [routerLink]="['/update',address.addressId]" class='btn btn-primary'>Modify</a>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Billing } from 'src/model/Billing';
-import { BillService } from '../bill.Service';
+import { BillService } from '../bill.service';
 
 
 @Component({
