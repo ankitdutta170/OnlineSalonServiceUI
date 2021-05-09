@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Appointment } from 'src/model/appointment';
+import { Customer } from 'src/model/customer';
 import { SalonServices } from 'src/model/salonservice';
 import { AppointmentService } from '../appointment.service';
+import { CustomerService } from '../customer.service';
 import { SalonService } from '../salon.service';
 
 @Component({
@@ -10,16 +12,18 @@ import { SalonService } from '../salon.service';
   styleUrls: ['./take-appointment.component.css']
 })
 export class TakeAppointmentComponent implements OnInit {
+  customers:Customer[];
   salonservices:SalonServices[];
   validationMessages: string[] = null;
   errorMessage: string = null;
   successMessage: string = null;
 
 
-  constructor(private service:AppointmentService,private salonService:SalonService) { }
+  constructor(private service:AppointmentService,private salonService:SalonService,private customerService:CustomerService) { }
 
   ngOnInit() {
     this.getSalonService();
+    this.getCustomers();
   }
 
   createNew(data: Appointment) {
@@ -45,6 +49,21 @@ export class TakeAppointmentComponent implements OnInit {
         
         this.salonservices = data;
         console.log(this.salonservices);
+        this.errorMessage = null;
+      },
+      (failResponse) => {
+        this.errorMessage = failResponse.error.errorMessage;
+      }
+    )
+
+
+  }
+  getCustomers(){
+    this.customerService.getCustomers().subscribe(
+      (data) => {
+        
+        this.customers = data;
+        console.log(this.customers)
         this.errorMessage = null;
       },
       (failResponse) => {

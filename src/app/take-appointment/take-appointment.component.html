@@ -3,7 +3,14 @@
     <h3 style="text-align:center">Take Appointment</h3>
 
     <form #appointmentForm='ngForm' (submit)='createNew(appointmentForm.value)'>
-       
+        <div class='form-group'>
+            <label for='customer'>User Name</label>
+            <select id="customer" class="form-control" name="customer" ngModel #customer='ngModel' required>
+                <option [ngValue]="customer" *ngFor="let customer of customers">
+                  {{customer.userName}}
+                </option>
+              </select>
+        </div>
 
         <div class='form-group'>
             <label for='preferredService'>Service</label>
