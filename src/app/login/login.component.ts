@@ -15,8 +15,8 @@ export class LoginComponent {
     private authenticationService: AuthenticationService) { }
 
   signIn(credentials) {
-    this.authenticationService.login(credentials)
-      .subscribe(result => {
+    this.authenticationService.login(credentials).subscribe(
+      result => {
         this.router.navigate(['/']);
         
       },
