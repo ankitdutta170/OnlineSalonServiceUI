@@ -33,25 +33,25 @@ const routes: Routes = [
 
   {path:'addSalonService',component:AddSalonserviceComponent,canActivate:[AuthGuard]},
   {path:'updateSalonService/:serviceId',component:SalonServiceUpdateComponent,canActivate:[AuthGuard]},
-  {path:'showServices',component:SalonserviceListComponent},
+  {path:'showServices',component:SalonserviceListComponent,canActivate:[AuthGuard]},
   {path:'update/:appointmentId',component:AppointmentUpdateComponent,canActivate:[AuthGuard]},
   {path:'addCustomer',component:AddCustomerComponent},
   {path:'showCustomers',component:CustomerListComponent,canActivate:[AuthGuard]},
   {path:'updateCustomer/:userId',component:CustomerUpdateComponent,canActivate:[AuthGuard]},
   {path:'login', component:LoginComponent},
   {path:'logout',component:LogoutComponent},
-  {path:'addPayment',component:AddPaymentComponent},
-  {path:'addCard',component:AddCardComponent},
-  {path:'showCards',component:CardListComponent},
-  {path:'showPayments',component:PaymentListComponent},
+  {path:'addPayment',component:AddPaymentComponent,canActivate:[AuthGuard]},
+  {path:'addCard',component:AddCardComponent,canActivate:[AuthGuard]},
+  {path:'showCards',component:CardListComponent,canActivate:[AuthGuard]},
+  {path:'showPayments',component:PaymentListComponent,canActivate:[AuthGuard]},
   {path:'updatecard/:cardId',component:UpdateCardComponent,canActivate:[AuthGuard]},
   {path:'updatepayment/:paymentId',component:PaymentUpdateComponent,canActivate:[AuthGuard]},
-  {path:'addBilling',component:AddBillComponent},
-  {path:'addAddress',component:AddAddressComponent},
-  {path:'showAddresses',component:AddressListComponent},
-  {path:'updateAddress/:addressId',component:AddressUpdateComponent},
-  {path:'updateBill/:billId',component:BillingUpdateComponent},
-  {path:'showBills',component:BillingListComponent}
+  {path:'addBilling',component:AddBillComponent,canActivate:[AuthGuard]},
+  {path:'addAddress',component:AddAddressComponent,canActivate:[AuthGuard]},
+  {path:'showAddresses',component:AddressListComponent,canActivate:[AuthGuard]},
+  {path:'updateAddress/:addressId',component:AddressUpdateComponent,canActivate:[AuthGuard]},
+  {path:'updateBill/:billId',component:BillingUpdateComponent,canActivate:[AuthGuard]},
+  {path:'showBills',component:BillingListComponent,canActivate:[AuthGuard]}
 ];
 
 @NgModule({

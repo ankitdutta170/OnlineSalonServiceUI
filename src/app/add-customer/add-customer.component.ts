@@ -11,6 +11,7 @@ export class AddCustomerComponent implements OnInit {
   validationMessages: string[] = null;
   errorMessage: string = null;
   successMessage: string = null;
+  role:string="customer";
   constructor(private service: CustomerService) { }
 
   ngOnInit() {

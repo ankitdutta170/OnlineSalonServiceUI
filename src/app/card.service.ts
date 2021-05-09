@@ -11,7 +11,8 @@ export class CardService {
   constructor(private http:HttpClient) { }
 
   addCard(card: Card) :Observable<any>{
-    return this.http.post(this.baseUrl, card, { responseType: 'text' });
+    const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
+    return this.http.post(this.baseUrl, card, { headers,responseType: 'text' });
   }
   getCards(): Observable<any> {
     const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });

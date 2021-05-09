@@ -10,7 +10,8 @@ export class SalonService {
   constructor(private http:HttpClient) { }
 
   addSalonService(salonservice: SalonServices) :Observable<any>{
-    return this.http.post(this.baseUrl, salonservice, { responseType: 'text' });
+    const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
+    return this.http.post(this.baseUrl, salonservice, {headers, responseType: 'text' });
   }
   getSalonServices(): Observable<any> {
     const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });

@@ -10,7 +10,8 @@ export class CustomerService {
   constructor(private http:HttpClient) { }
 
   addCustomer(customer: Customer) :Observable<any>{
-    return this.http.post(this.baseUrl, customer, { responseType: 'text' });
+    const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
+    return this.http.post(this.baseUrl, customer, {headers, responseType: 'text' });
   }
   getCustomers(): Observable<any> {
     const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });

@@ -11,7 +11,8 @@ export class AppointmentService {
   constructor(private http:HttpClient) { }
 
   addAppointment(appointment: Appointment) :Observable<any>{
-    return this.http.post(this.baseUrl, appointment, { responseType: 'text' });
+    const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
+    return this.http.post(this.baseUrl, appointment, { headers, responseType: 'text' });
   }
 
   getAppointments(): Observable<any> {

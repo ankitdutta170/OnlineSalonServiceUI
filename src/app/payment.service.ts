@@ -12,7 +12,8 @@ export class PaymentService {
   constructor(private http:HttpClient) { }
 
   addPayment(payment: Payment) :Observable<any>{
-    return this.http.post(this.baseUrl, payment, { responseType: 'text' });
+    const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
+    return this.http.post(this.baseUrl, payment, {headers, responseType: 'text' });
   }
   getPayments(): Observable<any> {
     const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });

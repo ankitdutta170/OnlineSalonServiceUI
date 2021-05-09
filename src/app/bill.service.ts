@@ -11,7 +11,8 @@ export class BillService {
   constructor(private http:HttpClient) { }
 
   addBill(bill: Billing) :Observable<any>{
-    return this.http.post(this.baseUrl, bill, { responseType: 'text' });
+    const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
+    return this.http.post(this.baseUrl, bill, {headers, responseType: 'text' });
   }
 
   getBills(): Observable<any> {

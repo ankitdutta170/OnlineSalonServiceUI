@@ -10,7 +10,8 @@ export class AddressService {
   baseUrl: string = "http://localhost:8085/address"
   constructor(private http:HttpClient) { }
   addAddresses(address: Address) :Observable<any>{
-    return this.http.post(this.baseUrl, address, { responseType: 'text' });
+    const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
+    return this.http.post(this.baseUrl, address, { headers, responseType: 'text' });
   }
 
   getAddresses(): Observable<any> {
