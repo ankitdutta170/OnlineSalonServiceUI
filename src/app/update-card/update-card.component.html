@@ -1,0 +1,50 @@
+<div class='maindiv'>
+    <div *ngIf='card != null'>
+        <table class='table'>
+            <tr>
+                <td>Card Id</td>
+                <td><input type='text' [(ngModel)]='card.cardId' readonly></td>
+            </tr>
+            <tr>
+                <td>Card Name</td>
+                <td><select id="cardname" class="form-control" [(ngModel)]='card.cardName' >
+                    <option value="Visa">Visa</option>
+                    <option value="MasterCard">MasterCard</option>
+                    <option value="RuPay">RuPay</option>
+                    <option value="American_Express">American Express</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>Card Number</td>
+                <td><input type='text' [(ngModel)]='card.cardNumber'></td>
+            </tr>
+            .<tr>
+                <td>CVV</td>
+                <td><input type='number' [(ngModel)]='card.cvv'></td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td><input type='date' [(ngModel)]='card.cardExpiry'></td>
+            </tr>
+            
+
+        </table>
+        <button (click)='updated()' class='btn btn-success btn-block'>Update</button>
+        <button (click)='goBack()' class='btn btn-primary btn-block'>Back</button>
+
+        <p class='alert alert-success' *ngIf='successMessage != null' (click)='successMessage=null'>
+            {{successMessage}}
+        </p>
+
+    </div>
+
+    <div *ngIf='errorMessage != null' class='alert alert-danger' (click)='errorMessage=null'>
+        {{errorMessage}}
+    </div>
+
+    <div *ngIf='validationMessages != null' (click)='validationMessages=null'>
+        <p *ngFor='let msg of validationMessages' class='alert alert-danger'>
+            {{msg}}
+        </p>
+    </div>
+</div>

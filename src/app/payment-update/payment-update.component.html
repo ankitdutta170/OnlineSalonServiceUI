@@ -1,0 +1,43 @@
+<div class='maindiv'>
+    <div *ngIf='payment != null'>
+        <table class='table'>
+            <tr>
+                <td>Payment Id</td>
+                <td><input type='text' [(ngModel)]='payment.paymentId' readonly></td>
+            </tr>
+            <tr>
+                <td>Payment Type</td>
+                <td><select id="paymenttype" class="form-control" [(ngModel)]='payment.type' >
+                    <option value="Cash">Cash</option>
+                    <option value="Card">Card</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>Payment Status</td>
+                <td><select id="paymentstatus" class="form-control" [(ngModel)]='payment.status' >
+                    <option value="complete">Complete</option>
+                    <option value="pending">Pending</option>
+                </select></td>
+            </tr>
+           
+
+        </table>
+        <button (click)='updated()' class='btn btn-success btn-block'>Update</button>
+        <button (click)='goBack()' class='btn btn-primary btn-block'>Back</button>
+
+        <p class='alert alert-success' *ngIf='successMessage != null' (click)='successMessage=null'>
+            {{successMessage}}
+        </p>
+
+    </div>
+
+    <div *ngIf='errorMessage != null' class='alert alert-danger' (click)='errorMessage=null'>
+        {{errorMessage}}
+    </div>
+
+    <div *ngIf='validationMessages != null' (click)='validationMessages=null'>
+        <p *ngFor='let msg of validationMessages' class='alert alert-danger'>
+            {{msg}}
+        </p>
+    </div>
+</div>

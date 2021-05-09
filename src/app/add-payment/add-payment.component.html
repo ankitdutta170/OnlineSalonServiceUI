@@ -1,0 +1,61 @@
+
+<div class='payment'>
+
+    <h3 style="text-align:center">Add Payment</h3>
+
+    <form #paymentForm='ngForm' (submit)='createNew(paymentForm.value)'>
+        
+        <div class='form-group'>
+            <label for='type'>Payment Type</label>
+            <select id="type" class="form-control" ngModel #type='ngModel' required  name="type">
+                <option value="Cash">Cash</option>
+                <option value="Card">Card</option>
+                
+            </select>
+            
+        </div> 
+
+        <div *ngIf='type.touched && type.invalid'>
+            <div *ngIf='type.errors.required' class='alert alert-danger'>
+                Please enter Payment Type
+            </div>
+
+        </div>
+        <div class='form-group'>
+            <label for='status'>Payment Status</label>
+            <select id="status" class="form-control" ngModel #status='ngModel' required  name="status">
+                <option value="success">Success</option>
+                <option value="pending">Pending</option>
+                
+                
+            </select>
+            
+        </div>
+        <div *ngIf='status.touched && status.invalid'>
+            <div *ngIf='status.errors.required' class='alert alert-danger'>
+                Please enter payment Status
+            </div>
+
+        </div>
+      
+
+
+
+
+        <button type='submit' class='btn btn-primary btn-block' [disabled]='paymentForm.invalid'>Submit</button>
+    </form>
+
+    <p  class='alert alert-success' *ngIf='successMessage != null' (click)='successMessage=null'>
+        {{successMessage}}
+    </p>
+   
+    <div *ngIf='errorMessage != null' class='alert alert-danger' (click)='errorMessage=null'>
+        {{errorMessage}}
+    </div>
+
+    <div *ngIf='validationMessages != null' (click)='validationMessages=null'>
+        <p *ngFor='let msg of validationMessages' class='alert alert-danger'>
+            {{msg}}
+        </p>
+    </div>
+</div>

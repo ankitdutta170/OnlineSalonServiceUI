@@ -16,6 +16,12 @@ import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { SalonserviceListComponent } from './salonservice-list/salonservice-list.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { CustomerUpdateComponent } from './customer-update/customer-update.component';
+import { AddPaymentComponent } from './add-payment/add-payment.component';
+import { AddCardComponent } from './add-card/add-card.component';
+import { PaymentListComponent } from './payment-list/payment-list.component';
+import { CardListComponent } from './card-list/card-list.component';
+import { UpdateCardComponent } from './update-card/update-card.component';
+import { PaymentUpdateComponent } from './payment-update/payment-update.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +38,13 @@ import { CustomerUpdateComponent } from './customer-update/customer-update.compo
     SalonserviceListComponent,
    
     CustomerListComponent,
-    CustomerUpdateComponent
+    CustomerUpdateComponent,
+    AddPaymentComponent,
+    AddCardComponent,
+    PaymentListComponent,
+    CardListComponent,
+    UpdateCardComponent,
+    PaymentUpdateComponent
 
   ],
   imports: [

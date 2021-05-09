@@ -12,6 +12,13 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import { CustomerUpdateComponent } from './customer-update/customer-update.component';
 import { SalonServiceUpdateComponent } from './salonservice-update/salonservice-update.component';
 import { SalonserviceListComponent } from './salonservice-list/salonservice-list.component';
+import { AddPaymentComponent } from './add-payment/add-payment.component';
+import { PaymentListComponent } from './payment-list/payment-list.component';
+import { AddCardComponent } from './add-card/add-card.component';
+import { CardListComponent } from './card-list/card-list.component';
+import { UpdateCardComponent } from './update-card/update-card.component';
+import { PaymentUpdateComponent } from './payment-update/payment-update.component';
+
 const routes: Routes = [
   {path:'appointments',component:TakeAppointmentComponent,canActivate:[AuthGuard]},
   {path:'showAppointments',component:AppointmentListComponent,canActivate:[AuthGuard]},
@@ -24,7 +31,13 @@ const routes: Routes = [
   {path:'showCustomers',component:CustomerListComponent,canActivate:[AuthGuard]},
   {path:'update/:userId',component:CustomerUpdateComponent,canActivate:[AuthGuard]},
   {path:'login', component:LoginComponent},
-  {path:'logout',component:LogoutComponent}
+  {path:'logout',component:LogoutComponent},
+  {path:'addPayment',component:AddPaymentComponent},
+  {path:'addCard',component:AddCardComponent},
+  {path:'showCards',component:CardListComponent},
+  {path:'showPayments',component:PaymentListComponent},
+  {path:'updatecard/:cardId',component:UpdateCardComponent,canActivate:[AuthGuard]},
+  {path:'updatepayment/:paymentId',component:PaymentUpdateComponent,canActivate:[AuthGuard]}
 ];
 
 @NgModule({

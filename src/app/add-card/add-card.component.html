@@ -1,0 +1,72 @@
+
+<div class='card'>
+
+    <h3 style="text-align:center">Add Card</h3>
+
+    <form #cardForm='ngForm' (submit)='createNew(cardForm.value)'>
+        
+
+          <div class='form-group'>
+            <label for='cardname'>Card Name</label>
+            <select id="cardname" class="form-control" ngModel #cardname='ngModel' required  name="cardName">
+                <option value="Visa">Visa</option>
+                <option value="MasterCard">MasterCard</option>
+                <option value="RuPay">Rupay</option>
+                <option value="American_Express">Amercian Express</option>
+                
+            </select>
+            
+        </div>  
+        <div *ngIf='cardname.touched && cardname.invalid'>
+            <div *ngIf='cardname.errors.required' class='alert alert-danger'>
+                Please enter Card
+            </div>
+        </div>
+
+        <div class="form-group">
+        <label for="cardnumber">Number</label>
+        <input type="text" id="cardnumber" name="cardNumber" ngModel #cardnumber='ngModel' class="form-control" required>
+      </div>
+      <div *ngIf='cardnumber.touched && cardnumber.invalid' class='alert alert-danger'>
+            Card Number Required
+        </div>
+
+        <div class="form-group">
+            <label for="cardexpiry">Expiry Date</label>
+            <input type="date" id="cardexpiry" name="cardExpiry" ngModel #cardexpiry='ngModel' class="form-control" required>
+          </div>
+          <div *ngIf='cardexpiry.touched && cardexpiry.invalid' class='alert alert-danger'>
+            Expiry Date Required
+            </div>
+
+
+
+        <div class="form-group">
+            <label for="cvv">CVV</label>
+            <input type="number" id="cvv" name="cvv" ngModel #cvv='ngModel' class="form-control" required placeholder="cvv">
+          </div>
+          <div *ngIf='cvv.touched && cvv.invalid' class='alert alert-danger'>
+                CVV Required
+            </div>
+      
+
+
+
+
+        <button type='submit' class='btn btn-primary btn-block' [disabled]='cardForm.invalid'>Submit</button>
+    </form>
+
+    <p  class='alert alert-success' *ngIf='successMessage != null' (click)='successMessage=null'>
+        {{successMessage}}
+    </p>
+   
+    <div *ngIf='errorMessage != null' class='alert alert-danger' (click)='errorMessage=null'>
+        {{errorMessage}}
+    </div>
+
+    <div *ngIf='validationMessages != null' (click)='validationMessages=null'>
+        <p *ngFor='let msg of validationMessages' class='alert alert-danger'>
+            {{msg}}
+        </p>
+    </div>
+</div>

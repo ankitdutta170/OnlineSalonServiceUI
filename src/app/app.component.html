@@ -1,65 +1,9 @@
 <div class="container">
   <h3>{{title}}</h3>
   <hr>
+   
 
-
-  <!--<nav class="navbar navbar-expand-lg navbar-dark primary-color">
-    <div class="btn-group">
-        <button type="button" routerLink="home" class="btn btn-primary">Home</button>
-        <button type="button" routerLink="aboutus" class="btn btn-primary">About Us</button>
-        <div class="btn-group">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Appointment
-            </button>
-            <div class="dropdown-menu">
-                <a routerLink="appointments" class="dropdown-item">Take Appointment</a>
-                <a routerLink="showAppointments" class="dropdown-item">Appointment List</a>
-            </div>
-        </div>
-
-        <div class="btn-group">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Salon Services
-            </button>
-            <div class="dropdown-menu">
-                <a routerLink="addService" class="dropdown-item">Add Service</a>
-                <a routerLink="showServices" class="dropdown-item">Service List</a>
-
-            </div>
-        </div>
-        <div class="btn-group">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Customer
-            </button>
-            <div class="dropdown-menu">
-                <a routerLink="addCustomer" class="dropdown-item">Add Customer</a>
-                <a routerLink="showCustomers" class="dropdown-item">Customer List</a>
-
-            </div>
-        </div>
-
-        <div class="btn-group">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">My Orders
-            </button>
-            <div class="dropdown-menu">
-                <a routerLink="addPayment" class="dropdown-item">Add Payment</a>
-                <a routerLink="showPayments" class="dropdown-item">Payment List</a>
-
-            </div>
-        </div>
-
-
-
-        <div class="btn-group">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">User
-            </button>
-            <div class="dropdown-menu" style="background-color: wheat;">
-                <a routerLink="profile" class="dropdown-item">Profile</a>
-                <a routerLink="login" class="dropdown-item">Login</a>
-                <a routerLink="changePassword" class="dropdown-item">Change Password</a>
-                <a routerLink="logout" class="dropdown-item">Logout</a>
-            </div>
-        </div>
-    </div>
-
-</nav>-->
+  
 
 
 <nav class="navbar navbar-expand-sm bg-dark">
@@ -74,7 +18,7 @@
     <li class="nav-item">
       <a routerLink="login" class="btn btn-primary">Login</a>
     </li>
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a routerLink="appointments" class="btn btn-primary">Appointment</a>
     </li>
     <li class="nav-item">
@@ -82,8 +26,8 @@
     </li>
     <li class="nav-item">
       <a routerLink="showServices" class="btn btn-primary">List of Services</a>
-    </li>
-    <li class="nav-item">
+    </li> -->
+    <!-- <li class="nav-item">
       <a routerLink="showAppointments" class="btn btn-primary">Show Appointments</a>
     </li>
     <li class="nav-item">
@@ -94,13 +38,49 @@
     </li>
     <li class="nav-item">
       <a routerLink="" class="btn btn-primary ">My Orders</a>
-    </li>
+    </li> -->
     <li class="nav-item">
       <a routerLink="logout" class="btn btn-primary ">Logout</a>
     </li>
+    <li class="nav-item">
+      <a routerLink="addPayment" class="btn btn-primary ">AddPayment</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="showPayments" class="btn btn-primary ">ShowPayment</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="showCards" class="btn btn-primary ">showCards</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="addCard" class="btn btn-primary ">AddCard</a>
+    </li>
+    <!-- <div class="dropdown" mdbDropdown>
+      <button mdbDropdownToggle mdbBtn color="primary" class="dropdown-toggle waves-light" type="button" mdbWavesEffect>
+      Payment
+      </button>
+    
+      <div class="dropdown-menu dropdown-primary">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </div> -->
+
+
   </ul>
   </nav>
-
+  
+  <div class="wrapper">
+    <ul>
+      <li>Payment
+        <ul>
+          <li>AddPayment </li>
+          <li>AllPayment</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 
   <router-outlet></router-outlet>
 </div>
