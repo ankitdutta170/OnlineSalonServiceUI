@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~8.0.3",
     "@angular/platform-browser-dynamic": "~8.0.3",
     "@angular/router": "~8.0.3",
+    "@sentry/angular": "^6.3.5",
     "angular2-jwt": "^0.2.3",
     "bootstrap": "^4.6.0",
     "jquery": "^3.6.0",

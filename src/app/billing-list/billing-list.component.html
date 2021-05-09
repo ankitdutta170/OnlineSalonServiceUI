@@ -1,0 +1,27 @@
+<div class='maindiv' *ngIf='errorMessage == null'>
+    <h3 style='text-align:center;'>{{header}}</h3>
+    <table class='table'>
+        <tr>
+            <th>Amount</th>
+            <th>Billing Date</th>
+            <th>Operation</th>
+        </tr>
+        <tr *ngFor='let bill of bills' style='padding:2px'>
+            <td>{{bill.amount}}</td>
+            <td>{{bill.billingDate}}</td>
+            
+            
+            <td>
+                <button class='btn btn-danger' (click)='delete(bill.billId)'>Delete</button>
+                <a [routerLink]="['/updateBill',bill.billId]" class='btn btn-primary'>Modify</a>
+            </td>
+        </tr>
+    </table>
+
+    <div *ngIf='message != null' (click)='message=null' class='alert alert-success'>
+        {{message}}
+    </div>
+</div>
+<div class='alert alert-danger' *ngIf='errorMessage != null'>
+    <h2>{{errorMessage}}</h2>
+</div>

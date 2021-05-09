@@ -1,51 +1,66 @@
-/* li{
-    margin-left:10px;
-} */
-.nav-item{
-    margin-left:10px;
-}
-.abc{
-    border:2px solid green;
-    border-radius: 10px;
-    margin:20px;
-    margin:5px;
-    width:auto;
-    float:left;
-}
 
-.wrapper{
-    width:480px;
-    margin: 0 auto;
-}
-.wrapper ul{
-    list-style: none;
-    margin-top: 2%;
 
+.head{
+    color: cornflowerblue;
+    background-color: gold;
 }
-.wrapper ul li{
-    background: #2ddb93;
-    width: 170px;
-    border: 1px orchid;
-    height: 50x;
-    line-height: 50x;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.menu{
+    background:green;
     text-align: center;
-    float: left;
+}
+.menu ul{
+    display: inline-flex;
+    list-style: none;
+    color: white;
+}
+.menu ul li{
+    width: 120px;
+    margin: 15px;
+    padding: 15px;
+}
+.menu ul li a {
+    text-decoration: none;
     color: #fff;
-    font-size: 14px;
-    position: relative;
-    font-family: big john;
 }
-.wrapper ul li:hover{
-    background: rgb(17, 173, 235);
+.active, .menu ul li:hover{
+    background: #2bab0d;
+    border-radius: 3px;
+ 
 }
-.wrapper ul ul{
+.menu .fa{
+    margin-right: 4px;
+}
+.submenu{
     display: none;
 }
-.wrapper ul li:hover> ul{
+.menu ul li:hover .submenu{
     display: block;
-}
-.wrapper ul ul ul{
-    margin-left:170px;
-    top: 0;
     position: absolute;
+    background: green;
+    margin-top: 15px;
+    margin-left: -15px;
+}
+.menu ul li:hover .submenu ul{
+    display: block;
+    margin:8px;
+}
+.menu ul li:hover .submenu ul li{
+    width: auto;
+    padding:10px;
+    border-bottom:1px dotted #fff;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+}
+.menu ul li:hover .submenu ul li:last-child{
+     border-bottom: none;
+}
+.menu ul li:hover .submenu ul li a:hover{
+    color: #b2ff00;
+
 }

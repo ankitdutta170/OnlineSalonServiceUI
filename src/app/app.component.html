@@ -1,87 +1,60 @@
-<div class="container">
+<div class="head">
   <h3>{{title}}</h3>
-  <hr>
-   
-
-  
-
-
-<nav class="navbar navbar-expand-sm bg-dark">
-
-
-  <ul class="navbar-nav">
-
-
-    <li class="nav-item">
-      <a routerLink="home" class="btn btn-primary">Home</a>
-    </li>
-    <li class="nav-item">
-      <a routerLink="login" class="btn btn-primary">Login</a>
-    </li>
-    <!-- <li class="nav-item">
-      <a routerLink="appointments" class="btn btn-primary">Appointment</a>
-    </li>
-    <li class="nav-item">
-      <a routerLink="addSalonService" class="btn btn-primary">Salon Service</a>
-    </li>
-    <li class="nav-item">
-      <a routerLink="showServices" class="btn btn-primary">List of Services</a>
-    </li> -->
-    <!-- <li class="nav-item">
-      <a routerLink="showAppointments" class="btn btn-primary">Show Appointments</a>
-    </li>
-    <li class="nav-item">
-      <a routerLink="addCustomer" class="btn btn-primary">Add Customer</a>
-    </li>
-    <li class="nav-item">
-      <a routerLink="showCustomers" class="btn btn-primary">Customer List</a>
-    </li>
-    <li class="nav-item">
-      <a routerLink="" class="btn btn-primary ">My Orders</a>
-    </li> -->
-    <li class="nav-item">
-      <a routerLink="logout" class="btn btn-primary ">Logout</a>
-    </li>
-    <li class="nav-item">
-      <a routerLink="addPayment" class="btn btn-primary ">AddPayment</a>
-    </li>
-    <li class="nav-item">
-      <a routerLink="showPayments" class="btn btn-primary ">ShowPayment</a>
-    </li>
-    <li class="nav-item">
-      <a routerLink="showCards" class="btn btn-primary ">showCards</a>
-    </li>
-    <li class="nav-item">
-      <a routerLink="addCard" class="btn btn-primary ">AddCard</a>
-    </li>
-    <!-- <div class="dropdown" mdbDropdown>
-      <button mdbDropdownToggle mdbBtn color="primary" class="dropdown-toggle waves-light" type="button" mdbWavesEffect>
-      Payment
-      </button>
-    
-      <div class="dropdown-menu dropdown-primary">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-      </div>
-    </div> -->
-
-
-  </ul>
-  </nav>
-  
-  <div class="wrapper">
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="menu">
     <ul>
-      <li>Payment
-        <ul>
-          <li>AddPayment </li>
-          <li>AllPayment</li>
-        </ul>
+        <li class="active"><a href="#"><i class="fa fa-home"></i>Home</a></li>
+        <li><a href="#">Appointment</a>
+            <div class="submenu">
+                <ul>
+                    <li><a routerLink="appointments">Take Appointment</a></li>
+                    <li><a routerLink="showAppointments"><i class="fa fa-angellist"></i>Show Appointments</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </li>
+        <li><a href="#"><i class="fa fa-users"></i>Customer</a>
+          <div class="submenu">
+              <ul>
+                  <li><a routerLink="addCustomer"><i class="fa fa-clone"></i>Add Customer</a></li>
+                  <li><a routerLink="showCustomers"><i class="fa fa-angellist"></i>Show Customers</a>
+                  <li><a routerLink="addAddress"><i class="fa fa-angellist"></i>Add Address</a>
+                  <li><a routerLink="showAddresses"><i class="fa fa-angellist"></i>Show Addresses</a>
+                  </li>
+                  
+              </ul>
+          </div>
       </li>
+      <li><a href="#"><i class="fa fa-users"></i>Services</a>
+        <div class="submenu">
+            <ul>
+                <li><a routerLink="addSalonService"><i class="fa fa-clone"></i>Add Service</a></li>
+                <li><a routerLink="showServices"><i class="fa fa-angellist"></i>Show Services</a>
+                </li>
+                
+            </ul>
+        </div>
+    </li>
+    <li><a href="#"><i class="fa fa-users"></i>Orders</a>
+      <div class="submenu">
+          <ul>
+              <li><a routerLink="addPayment"><i class="fa fa-clone"></i>Add Payment</a></li>
+              <li><a routerLink="showPayments"><i class="fa fa-angellist"></i>Show Payments</a>
+              <li><a routerLink="addCard"><i class="fa fa-angellist"></i>Add Card</a>
+              <li><a routerLink="showCards"><i class="fa fa-angellist"></i>Show Cards</a>
+              <li><a routerLink="addBilling"><i class="fa fa-angellist"></i>Add Bill</a>
+              <li><a routerLink="showBills"><i class="fa fa-angellist"></i>Show Bills</a>
+              </li>
+              
+          </ul>
+      </div>
+  </li>
+        <li><a href="#"><i class="fa fa-phone"></i>About Us</a></li>
+        <li><a href="#" routerLink="login"><i class="fa fa-users"></i>Log In</a></li>
+        <li><a href="#" routerLink="logout">Logout</a></li>
     </ul>
   </div>
-
-  <router-outlet></router-outlet>
-</div>
+    <router-outlet></router-outlet>
 

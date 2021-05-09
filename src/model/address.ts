@@ -2,7 +2,7 @@ import { Time } from "@angular/common";
 
 
 export interface Address{
-    address_id:number;
+    addressId:number;
     doorNo:string;
     street:string;
     area:string;

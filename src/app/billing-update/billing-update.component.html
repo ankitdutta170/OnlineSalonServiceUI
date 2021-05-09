@@ -1,22 +1,21 @@
-<div class='customer'>
-    <div *ngIf='customer != null'>
+<div class='maindiv'>
+    <div *ngIf='bill != null'>
         <table class='table'>
             <tr>
-                <td>Customer Id</td>
-                <td><input type='text' [(ngModel)]='customer.userId' readonly></td>
+                <td>Billing Id</td>
+                <td><input type='text' [(ngModel)]='bill.billId' readonly></td>
             </tr>
             <tr>
-                <td>Name</td>
-                <td><input type='text' [(ngModel)]='customer.name'></td>
+                <td>Amount</td>
+                <td><input type='number' [(ngModel)]='bill.amount'></td>
             </tr>
             <tr>
-                <td>email</td>
-                <td><input type='text' [(ngModel)]='customer.email'></td>
+                <td>Billing Date</td>
+                <td><input type='date' [(ngModel)]='bill.billingDate'></td>
             </tr>
-            <tr>
-                <td>dob</td>
-                <td><input type='date' [(ngModel)]='customer.dob'></td>
-            </tr>
+            
+            
+            
         </table>
         <button (click)='updated()' class='btn btn-success btn-block'>Update</button>
         <button (click)='goBack()' class='btn btn-primary btn-block'>Back</button>

@@ -1,0 +1,51 @@
+<div class='maindiv'>
+    <div *ngIf='address != null'>
+        <table class='table'>
+            <tr>
+                <td>Address Id</td>
+                <td><input type='text' [(ngModel)]='address.addressId' readonly></td>
+            </tr>
+            <tr>
+                <td>door No</td>
+                <td><input type='text' [(ngModel)]='address.doorNo'></td>  
+            </tr>
+            <tr>
+                <td>Street</td>
+                <td><input type='text' [(ngModel)]='address.street'></td>
+            </tr>
+            <tr>
+                <td>Area</td>
+                <td><input type='text' [(ngModel)]='address.area'></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td><input type='text' [(ngModel)]='address.city'></td>
+            </tr>
+            <tr>
+                <td>State</td>
+                <td><input type='text' [(ngModel)]='address.state'></td>
+            </tr>
+            <tr>
+                <td>Pin Number</td>
+                <td><input type='number' [(ngModel)]='address.pincode'></td>
+            </tr>
+        </table>
+        <button (click)='updated()' class='btn btn-success btn-block'>Update</button>
+        <button (click)='goBack()' class='btn btn-primary btn-block'>Back</button>
+
+        <p class='alert alert-success' *ngIf='successMessage != null' (click)='successMessage=null'>
+            {{successMessage}}
+        </p>
+
+    </div>
+
+    <div *ngIf='errorMessage != null' class='alert alert-danger' (click)='errorMessage=null'>
+        {{errorMessage}}
+    </div>
+
+    <div *ngIf='validationMessages != null' (click)='validationMessages=null'>
+        <p *ngFor='let msg of validationMessages' class='alert alert-danger'>
+            {{msg}}
+        </p>
+    </div>
+</div>
