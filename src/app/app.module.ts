@@ -30,6 +30,8 @@ import { PaymentListComponent } from './payment-list/payment-list.component';
 import { CardListComponent } from './card-list/card-list.component';
 import { UpdateCardComponent } from './update-card/update-card.component';
 import { PaymentUpdateComponent } from './payment-update/payment-update.component';
+import { GetDateComponent } from './get-date/get-date.component';
+import { ShowListByDateComponent } from './show-list-by-date/show-list-by-date.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { PaymentUpdateComponent } from './payment-update/payment-update.componen
     PaymentListComponent,
     CardListComponent,
     UpdateCardComponent,
-    PaymentUpdateComponent
+    PaymentUpdateComponent,
+    GetDateComponent,
+    ShowListByDateComponent
 
 
   ],

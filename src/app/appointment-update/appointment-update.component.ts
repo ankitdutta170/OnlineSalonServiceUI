@@ -52,7 +52,7 @@ export class AppointmentUpdateComponent implements OnInit {
   }
 
   goBack(){
-    this.router.navigate(["showAppointments"]);
+    this.router.navigate(["appointments"]);
   }
 
 
