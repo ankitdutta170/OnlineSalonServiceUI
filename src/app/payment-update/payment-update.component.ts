@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Payment } from 'src/model/payment';
-import { PaymentService } from '../Payment.service';
+import { PaymentService } from '../payment.service';
 
 @Component({
   selector: 'app-card-update',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Card } from 'src/model/card';
-import { CardService } from '../Card.service';
+import { CardService } from '../card.service';
 
 @Component({
   selector: 'app-card-update',
