@@ -1,0 +1,14 @@
+<div class='maindiv'>
+    <table class='table'>
+        <tr>
+            <td>Enter Date</td>
+            <td><input type='date' id='date' [(ngModel)]='date'></td>
+        </tr>
+        
+    </table>
+    <button (click)='getList()' class='btn btn-success btn-block'>Get List</button>
+</div>
+
+<div class='maindiv subdiv'  *ngIf='showList'>
+    <show-list-by-date  [date]='date' ></show-list-by-date>
+</div>

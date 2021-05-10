@@ -26,11 +26,12 @@ import { AddCardComponent } from './add-card/add-card.component';
 import { CardListComponent } from './card-list/card-list.component';
 import { UpdateCardComponent } from './update-card/update-card.component';
 import { PaymentUpdateComponent } from './payment-update/payment-update.component';
+import { GetDateComponent } from './get-date/get-date.component';
 
 const routes: Routes = [
   {path:'appointments',component:TakeAppointmentComponent,canActivate:[AuthGuard]},
   {path:'showAppointments',component:AppointmentListComponent,canActivate:[AuthGuard]},
-
+  {path:'appointmentByDate',component:GetDateComponent,canActivate:[AuthGuard]},
   {path:'addSalonService',component:AddSalonserviceComponent,canActivate:[AuthGuard]},
   {path:'updateSalonService/:serviceId',component:SalonServiceUpdateComponent,canActivate:[AuthGuard]},
   {path:'showServices',component:SalonserviceListComponent,canActivate:[AuthGuard]},

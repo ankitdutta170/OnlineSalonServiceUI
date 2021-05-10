@@ -17,7 +17,7 @@ export class AuthenticationService {
       map(
         response => {
           if (response && response.token) {
-            console.log(response.token);
+            console.log(response);
             let tokenStr = 'Bearer ' + response.token;
             localStorage.setItem('token', tokenStr);
             return response;
